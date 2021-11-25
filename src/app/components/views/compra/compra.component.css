@@ -1,0 +1,14 @@
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.container-contato {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,23 @@
+<div class="container-form">
+  <h1 mat-dialog-title>Finalizar compra</h1>
+
+  <form [formGroup]="saleForm">
+    <div class="container-contato" fxLayout="row wrap">
+      <mat-form-field class="example-full-width">
+        <mat-label>Seu nome:</mat-label>
+        <input matInput placeholder="" name="Nome" formControlName="Nome" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Forma de pagamento</mat-label>
+        <select matNativeControl required>
+          <option *ngFor="let paymentList of payment" value="{{paymentList.descricao}}">{{paymentList.descricao}}</option>
+        </select>
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="newSale()">Finalizar compra!</button>
+  </div>
+</div>

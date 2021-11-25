@@ -1,4 +1,6 @@
 export interface Categoria {
-    id?: number;
+    categoriaId?: number;
     nome: string;
+    criadoEm: Date;
+    produtos: any;
 }

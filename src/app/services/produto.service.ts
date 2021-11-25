@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Produto } from "../models/produto";
@@ -7,7 +7,14 @@ import { Produto } from "../models/produto";
     providedIn: "root",
 })
 export class ProdutoService {
-    private baseUrl = "http://localhost:5000/api/produto";
+    private baseUrl = "http://localhost:5001/api/produto";
+    httpOptions = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,POST,OPTIONS,DELETE,PUT",
+        }),
+      };
 
     constructor(private http: HttpClient) {}
 
